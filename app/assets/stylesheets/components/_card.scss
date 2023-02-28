@@ -1,0 +1,52 @@
+h2 {
+  font-weight: 800 ;
+    margin-bottom: 0px ;
+    font-size: 25px ;
+    line-height: 30px ;
+    letter-spacing: normal ;
+    padding-top: 2px ;
+    padding-bottom: 2px ;
+    color:orange;
+}
+
+
+figure {
+/*   width:30%; */
+  position:relative;
+  padding:5px;
+}
+
+figure img {
+  width:100%;
+  border-radius:3px;
+}
+
+figcaption.inside{
+  position:absolute;
+  top:20px;
+  left:20px;
+ }
+
+figcaption.outside h2 {
+  color:orange;
+}
+
+span {
+  //display:block;
+}
+
+.text-desc {
+  font-size:14px;
+/*       font-size: 16px ; */
+    line-height: 22px ;
+    padding-top: 0px ;
+    padding-bottom: 0px ;
+    color: rgb(72, 72, 72) ;
+    font-weight: normal ;
+    margin-top: 0px ;
+}
+
+.text-color {
+  color:black(255, 180, 0);
+  font-size:12px;
+}
