@@ -1,26 +1,22 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:show, :destroy]
+  before_action :set_booking, only: %i[show destroy]
 
   def index
-    @user = User.find(params(:user_id))
+    @bookings = Booking.where(user: current_user)
   end
 
   def show
-    @user = User.find(params(:user_id))
   end
 
   def new
-    @user = User.find(params(:user_id))
-    @place = Place.find(params(:place_id))
     @booking = Booking.new
   end
 
   def create
     @booking = Booking.new(booking_params)
-    @user = User.find(params(:user_id))
-    @place = Place.find(params(:place_id))
-    @booking.user = @user
-    @booking.place = @place
+    place = Place.find(params(:place_id))
+    @booking.user = current_user
+    @booking.place = place
     if @booking.save
       redirect_to booking_path(@booking)
     else

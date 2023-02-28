@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
+  devise_for :users
   namespace :owner do
     resources :places
+    resources :bookings
   end
-  devise_for :users
-  resources :places, only: %i[index show new create]
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
+  resources :places, only: %i[index show new create] do
+    resources :bookings, only: %i[new create]
+  end
+  resources :bookings, only: %i[index show destroy]
   root to: "places#index"
 end
