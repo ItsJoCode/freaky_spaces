@@ -1,0 +1,7 @@
+<ul>
+  <% @places.each do |place| %>
+    <li><%= link_to place.name, owner_place_path(place)%></li>
+  <% end %>
+</ul>
+
+<%= link_to 'Add places', new_owner_place_path %>
