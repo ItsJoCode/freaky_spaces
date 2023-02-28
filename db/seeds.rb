@@ -6,6 +6,23 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 puts 'Creating some users...'
+
+def add_places(userid)
+  3.times do
+    cap = (3..9).to_a
+    price = (20..600).to_a
+    place = Place.new(
+      name: Faker::Book.title,
+      description: Faker::Lorem.paragraph,
+      address: Faker::Address.full_address,
+      capacity: cap.sample,
+      price_per_day: price.sample,
+      user_id: userid
+    )
+    place.save!
+  end
+end
+
 PASSWD = "azerty"
 user = User.new(
   first_name: "Jonathan",
@@ -14,6 +31,8 @@ user = User.new(
   password: PASSWD
 )
 user.save!
+add_places(user.id)
+
 user = User.new(
   first_name: "Anthony",
   last_name: "Gombert",
@@ -21,6 +40,8 @@ user = User.new(
   password: PASSWD
 )
 user.save!
+add_places(user.id)
+
 user = User.new(
   first_name: "Ronan",
   last_name: "Laporte-Guiziou",
@@ -28,6 +49,8 @@ user = User.new(
   password: PASSWD
 )
 user.save!
+add_places(user.id)
+
 user = User.new(
                 first_name: "Florent",
                 last_name: "Arène",
@@ -35,18 +58,6 @@ user = User.new(
                 password: PASSWD
               )
 user.save!
-puts 'Users finished!'
+add_places(user.id)
 
-puts 'Creating some places...'
-10.times do
-  cap = (3..9).to_a
-  price = (20..600).to_a
-  place = Place.new(
-    name: Faker::Book.title,
-    description: Faker::Lorem.paragraph,
-    capacity: cap.sample,
-    price_per_day: price.sample
-  )
-  place.save!
-end
-puts 'Places finished!'
+puts 'Users finished!'
