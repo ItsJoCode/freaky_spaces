@@ -1,9 +1,17 @@
 <div class="container">
-  <div class="row justify-content-center">
-    <h1>Detail of <%= @place.name %></h1>
-    <h2>Owner : <%= @place.user.first_name %> <%= @place.user.last_name %></h2>
-    <p><%= @place.description %></p>
-    <p><%= @place.address %></p>
-    <p>Capicity : <%= @place.capacity %> | $<%= @place.price_per_day %>/day</p>
+  <div class="detail-flex">
+    <div class="row justify-content-left">
+      <h1>Detail of <%= @place.name %></h1>
+      <h2>Owner : <%= @place.user.first_name %> <%= @place.user.last_name %></h2>
+      <div class="card-img-left">
+      <%= image_tag("space.png") %>
+      </div>
+      <p><%= @place.description %></p>
+      <p><%= @place.address %></p>
+      <p>Capacity : <%= @place.capacity %> | $<%= @place.price_per_day %>/day</p>
+    </div>
+    <div class="form-md-right">
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore obcaecati dicta eligendi ipsa sapiente eius illo aperiam et dolore cupiditate, quis mollitia possimus, molestias officiis iure assumenda quo harum architecto?</p>
+    </div>
   </div>
 </div>
