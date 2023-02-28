@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resources :places
     resources :bookings, only: %i[index show]
   end
-  resources :places, only: %i[index show new create] do
+  resources :places, only: %i[index show] do
     resources :bookings, only: %i[new create]
   end
   resources :bookings, only: %i[index show destroy]
