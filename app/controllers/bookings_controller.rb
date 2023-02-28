@@ -8,15 +8,11 @@ class BookingsController < ApplicationController
   def show
   end
 
-  def new
-    @booking = Booking.new
-  end
-
   def create
     @booking = Booking.new(booking_params)
-    place = Place.find(params(:place_id))
+    @place = Place.find(params[:place_id])
     @booking.user = current_user
-    @booking.place = place
+    @booking.place = @place
     if @booking.save
       redirect_to booking_path(@booking)
     else

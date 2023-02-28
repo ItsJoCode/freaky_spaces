@@ -4,6 +4,9 @@
     <h2>Owner : <%= @place.user.first_name %> <%= @place.user.last_name %></h2>
     <p><%= @place.description %></p>
     <p><%= @place.address %></p>
-    <p>Capicity : <%= @place.capacity %> | $<%= @place.price_per_day %>/day</p>
+    <p>Capacity : <%= @place.capacity %> | $<%= @place.price_per_day %>/day</p>
+  </div>
+  <div class="form">
+    <%= render "bookings/form" %>
   </div>
 </div>
