@@ -8,19 +8,6 @@ class PlacesController < ApplicationController
   def show
   end
 
-  def new
-    @place = Place.new
-  end
-
-  def create
-    @place = Place.new(place_params)
-    if @place.save
-      redirect_to place_path(@place)
-    else
-      render :new, status: :unprocessable_entity
-    end
-  end
-
   private
 
   def set_place
