@@ -1,0 +1,26 @@
+.container-new-places {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 800px;
+  padding: 0 20px;
+
+  form {
+    margin: 0px auto;
+    width: 100%;
+    max-width: 800px;
+    padding: 18px 20px;
+  }
+
+  .btn-warning {
+    background-color: #FFC482;
+    border-color: #FFC482;
+
+    &:hover {
+      background-color: #FFA900;
+      border-color: #FFA900;
+    }
+
+  }
+
+
+}
