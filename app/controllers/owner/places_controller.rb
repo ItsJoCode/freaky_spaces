@@ -14,6 +14,7 @@ class Owner::PlacesController < ApplicationController
 
   def create
     @place = Place.new(place_params)
+    @place.user = current_user
     if @place.save
       redirect_to owner_place_path(@place)
     else
@@ -41,6 +42,6 @@ class Owner::PlacesController < ApplicationController
   end
 
   def place_params
-    params.require(:place).permit(:name, :description, :capacity, :price_per_day, :address)
+    params.require(:place).permit(:name, :description, :capacity, :price_per_day, :address, :photo)
   end
 end

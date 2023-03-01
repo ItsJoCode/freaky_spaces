@@ -1,5 +1,5 @@
 <div class="main-container-places">
-    <div class="booking-bg" style="background: url('<%= image_url "space.png" %>');"></div>
+    <div class="booking-bg" style="background: url('<%= cl_image_path @place.photo.key %>');"></div>
     <div class="booking-show">
       <div class="detail-flex">
         <div class="details">
@@ -7,7 +7,7 @@
           <hr>
           <div class="img-detail-flex">
             <div>
-              <%= image_tag("space.png") %>
+              <%= cl_image_tag @place.photo.key %>
             </div>
             <div>
               <p class="description"><%= @place.description %></p>
