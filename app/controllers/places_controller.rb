@@ -3,6 +3,14 @@ class PlacesController < ApplicationController
 
   def index
     @places = Place.all
+
+    # The `geocoded` scope filters only flats with coordinates
+    @markers = @places.geocoded.map do |place|
+      {
+        lat: place.latitude,
+        lng: place.longitude
+      }
+    end
   end
 
   def show
