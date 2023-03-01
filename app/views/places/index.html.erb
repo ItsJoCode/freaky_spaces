@@ -1,22 +1,27 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1521401830884-6c03c1c87ebb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80);">
+  <div class="container">
+    <h1>Welcome to <strong>Freaky Spaces</h1>
+    <p>Spice up your evenings by traveling to a freaky place</p>
+    <a class="btn btn-primary" href="#">Login</a>
+  </div>
+</div>
+
 <div class="container">
-    <section id="card-places" class="my-5">
-      <div class="title mb-1">
-        <h2>Freaky Places around the world</h2>
-        <p>Browse a new selection of places for crazy party</p>
-      </div>
-      <div class="row">
-        <% @places.each do |place|  %>
-          <div class="col-md-4">
-            <figure>
-          <%= image_tag("space.png") %>
-          <figcaption class="inside">
-          </figcaption>
-          <figcaption class="outside">
-            <h2><%= link_to place.name, place_path(place) %></h2>
-            <p><%= place.description %></p>
-          </figcaption>
-        </figure>
+  <div class="cards">
+    <% @places.each do |place| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1571404549664-f65f8709c04d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80)">
+        <div class="card-name">
+          <h2><%= link_to place.name, place_path(place) %></h2>
         </div>
-        <% end %>
-  </section>
+        <div class="card-action">
+          <div>
+            <p><i class="fa-solid fa-location-dot"></i> Here</p>
+          </div>
+          <div>
+            <p><i class="fa-solid fa-people-group"></i> <%= place.capacity %> <i class="fa-solid fa-euro-sign"></i> <%= place.price_per_day %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
