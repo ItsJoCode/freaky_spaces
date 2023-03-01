@@ -1,7 +1,29 @@
-<ul>
-  <% @places.each do |place| %>
-    <li><%= link_to place.name, owner_place_path(place)%></li>
-  <% end %>
-</ul>
 
-<%= link_to 'Add places', new_owner_place_path %>
+
+
+
+<div class="container">
+
+  <button type="button" class="btn btn-outline-secondary">
+   <%= link_to 'Add a Freaky Place', new_owner_place_path %>
+  </button>
+
+  <br><br/>
+  <div class="cards">
+    <% @places.each do |place| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1571404549664-f65f8709c04d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80)">
+        <div class="card-name">
+          <h2><%= link_to place.name, place_path(place) %></h2>
+        </div>
+        <div class="card-action">
+          <div>
+            <p><i class="fa-solid fa-location-dot"></i> Here</p>
+          </div>
+          <div>
+            <p><i class="fa-solid fa-people-group"></i> <%= place.capacity %> <i class="fa-solid fa-euro-sign"></i> <%= place.price_per_day %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
