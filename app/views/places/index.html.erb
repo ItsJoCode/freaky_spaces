@@ -8,11 +8,13 @@
 
 <div class="container">
   <div class="cards">
+
     <% @places.each do |place| %>
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path place.photo.key, height: 300, crop: :fill %>')">
         <div class="card-name">
           <h2><%= link_to place.name, place_path(place) %></h2>
         </div>
+
         <div class="card-action">
           <div>
             <p><i class="fa-solid fa-location-dot"></i> Here</p>
@@ -21,6 +23,7 @@
             <p><i class="fa-solid fa-people-group"></i> <%= place.capacity %> <i class="fa-solid fa-euro-sign"></i> <%= place.price_per_day %></p>
           </div>
         </div>
+
       </div>
     <% end %>
   </div>
