@@ -12,6 +12,9 @@ gem "pg_search"
 # GEM Faker
 gem "faker"
 
+# GEM Geocoder
+gem "geocoder"
+
 # GEM Cloudinary
 gem "cloudinary"
 
