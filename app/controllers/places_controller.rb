@@ -9,6 +9,22 @@ class PlacesController < ApplicationController
     @booking = Booking.new
   end
 
+  # def edit
+  # end
+
+  # def update
+  #   if @place.update(place_params)
+  #     redirect_to owner_place_path(@place)
+  #   else
+  #     render :edit, status: :unprocessable_entity
+  #   end
+  # end
+
+  def destroy
+    @place.destroy
+    redirect_to owner_places_path, status: :see_other
+  end
+
   private
 
   def set_place
