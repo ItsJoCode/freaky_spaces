@@ -2,6 +2,16 @@
   <div class="container">
     <h1>Welcome to <strong>Freaky Spaces</h1>
     <p>Spice up your evenings by traveling to a freaky place</p>
+    <div class="search col-12 col-sm-4 mx-auto pt-4">
+      <%= form_with url: places_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control fa-placholder",
+          placeholder: "Find a movie"
+        %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
+    </div>
   </div>
 </div>
 
@@ -15,6 +25,9 @@
         </div>
 
         <div class="card-action">
+          <div class="fav">
+            <h2><i class="fa-regular fa-heart"></i></h2>
+          </div>
           <div>
             <p><i class="fa-solid fa-location-dot"></i> Here</p>
           </div>
