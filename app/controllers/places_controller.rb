@@ -10,12 +10,16 @@ class PlacesController < ApplicationController
   end
 
   def show
-    @booking = Booking.new
-    @markers = [{
-      lat: @place.latitude,
-      lng: @place.longitude,
-      info_window_html: render_to_string(partial: "info_window", locals: {place: @place})
-    }]
+    if @place.user == current_user
+      redirect_to owner_place_path(@place)
+    else
+      @booking = Booking.new
+      @markers = [{
+        lat: @place.latitude,
+        lng: @place.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {place: @place})
+      }]
+    end
   end
 
   # def edit
