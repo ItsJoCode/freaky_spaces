@@ -1,0 +1,18 @@
+.container_booking {
+  margin-top: 50px;
+  height: 75vh;
+  display: table-row-group;
+
+  .cards{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;display: grid;
+  padding-left: 35px;
+
+  }
+
+  .booking_title {
+    padding-left: 40px;
+  }
+
+}
