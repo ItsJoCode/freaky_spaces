@@ -2,7 +2,11 @@ class PlacesController < ApplicationController
   before_action :set_place, only: %i[show]
 
   def index
-    @places = Place.all
+    if params[:query].present?
+      @places = Place.global_search(params[:query])
+    else
+      @places = Place.all
+    end
   end
 
   def show

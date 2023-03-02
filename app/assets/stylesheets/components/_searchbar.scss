@@ -1,3 +1,5 @@
 .fa-placholder {
-  font-family: FontAwesome;
+  // font-family: "FontAwesome";
+  font: var(--fa-magnifying-glass);
+  content: "\f002";
 }
