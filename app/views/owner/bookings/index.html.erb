@@ -5,7 +5,7 @@
     <% @bookings.each do |booking| %>
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path booking.place.photo.key, height: 300, crop: :fill %>')">
         <div class="card-name">
-          <h2><%= booking.place.name %></h2>
+          <h2><%= link_to booking.place.name, booking_path(booking) %></h2>
 
         </div>
           <div class="card-action">

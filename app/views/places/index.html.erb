@@ -1,13 +1,13 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1521401830884-6c03c1c87ebb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80);">
   <div class="container">
-    <h1>Welcome to <strong>Freaky Spaces</h1>
+    <h1>Welcome to <strong>Freaky Spaces</strong></h1>
     <p>Spice up your evenings by traveling to a freaky place</p>
     <div class="search col-12 col-sm-4 mx-auto pt-4">
       <%= form_with url: places_path, method: :get, class: "d-flex" do %>
         <%= text_field_tag :query,
           params[:query],
           class: "form-control fa-placholder",
-          placeholder: "Find a movie"
+          placeholder: "🔍  Find a place"
         %>
         <%= submit_tag "Search", class: "btn btn-primary" %>
       <% end %>

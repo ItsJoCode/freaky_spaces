@@ -16,7 +16,7 @@ class Owner::PlacesController < ApplicationController
     @place = Place.new(place_params)
     @place.user = current_user
     if @place.save
-      redirect_to place_path(@place)
+      redirect_to owner_place_path(@place)
     else
       render :new, status: :unprocessable_entity
     end

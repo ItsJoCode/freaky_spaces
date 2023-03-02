@@ -6,8 +6,14 @@ ruby "3.1.2"
 # GEM devise
 gem "devise"
 
+# GEM pg_search
+gem "pg_search"
+
 # GEM Faker
 gem "faker"
+
+# GEM Geocoder
+gem "geocoder"
 
 # GEM Cloudinary
 gem "cloudinary"
