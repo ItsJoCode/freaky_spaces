@@ -1,6 +1,7 @@
 
 .container {
   margin-top: 50px;
+  min-height: 100vh;
 }
 
 h1 {
@@ -39,14 +40,14 @@ p {
   .booking-show {
     position: absolute;
     width: 100%;
-    top: 280px;
+    top: 250px;
   }
 
   .detail-flex {
     display: flex;
     width: 70%;
     margin: auto;
-    align-items: flex-end;
+    align-items: center;
   }
 
   .img-detail-flex {
@@ -97,7 +98,7 @@ p {
     padding: 19px;
   }
 
-  .booked-now {
+  .book-now {
     color: #FFC482;
     background-color: #1E152A;
     text-transform:uppercase;

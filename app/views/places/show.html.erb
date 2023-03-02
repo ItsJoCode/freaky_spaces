@@ -17,9 +17,14 @@
           <hr>
           <p class="address"><i class="fa-solid fa-location-dot"></i> <%= @place.address %></p>
           <p class="owner">Owner : <%= @place.user.first_name %> <%= @place.user.last_name %></p>
+          <div
+              data-controller="map"
+              data-map-markers-value="<%= @markers.to_json %>"
+              data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+          </div>
         </div>
         <div class="form-booking">
-          <div class="booked-now">Booked Now</div>
+          <div class="book-now">Book Now</div>
           <p><%= render "bookings/form" %></p>
         </div>
       </div>
