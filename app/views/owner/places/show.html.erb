@@ -2,4 +2,17 @@
 
 <p><%= @place.description %></p>
 
+
+
+
+
+
+
+
+
+
+
+
+
 <%= link_to 'Back to list', owner_places_path %>
+<%= link_to "supprimer" , owner_place_path(@place), data: {turbo_method: :delete, turbo_confirm: "Vraiment??"}, class: 'btn btn-danger'  %>
