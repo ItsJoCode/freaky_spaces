@@ -6,6 +6,11 @@ class Owner::PlacesController < ApplicationController
   end
 
   def show
+    @markers = [{
+      lat: @place.latitude,
+      lng: @place.longitude,
+      info_window_html: render_to_string(partial: "places/info_window", locals: {place: @place})
+    }]
   end
 
   def new

@@ -40,10 +40,7 @@ class PlacesController < ApplicationController
   #   end
   # end
 
-  def destroy
-    @place.destroy
-    redirect_to owner_places_path, status: :see_other
-  end
+
 
   private
 

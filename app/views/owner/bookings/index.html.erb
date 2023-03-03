@@ -1,7 +1,24 @@
-<div class="container">
-  <ul>
+
+<div class="container_booking">
+  <h1 class="booking_title mt-3">Booking a venir</h1>
+  <div class="cards_booking">
     <% @bookings.each do |booking| %>
-      <li><%= booking.user.first_name %></li>
+      <div class="card-wrapper">
+        <div class="booking-card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path booking.place.photo.key, height: 300, crop: :fill %>')">
+          <div class="card-name-booking">
+            <h2><%= link_to booking.place.name, booking_path(booking) %></h2>
+          </div>
+          <div class="card-dates">
+            <p><%= booking.start_date.strftime("%Y/%m/%d") %> to <%= booking.end_date.strftime("%Y/%m/%d") %></p>
+          </div>
+          <div class="booking-card-action">
+            <div>
+              <p><i class="fa-solid fa-people-group"></i> <%= booking.place.capacity %> <i class="fa-solid fa-euro-sign"></i> <%= booking.place.price_per_day %></p>
+            </div>
+          </div>
+        </div>
+      </div>
     <% end %>
-  </ul>
+  </div>
+  <br>
 </div>
