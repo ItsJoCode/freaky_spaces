@@ -2,6 +2,19 @@
   <div class="row">
     <div class="log col-12 col-sm-4 mx-auto p-4">
     <h2 class="text-center">Log in</h2>
+    <!-- Bouton Facebook Connect -->
+      <div class="col-12 mb-3 pt-2">
+        <a href="#" class="btn-fb">
+          <i class="fab fa-facebook-f"></i>   Connect with Facebook
+        </a>
+      </div>
+
+      <!-- Bouton Gmail Connect -->
+      <div class="col-12 mb-0">
+        <a href="#" class="btn-gmail">
+          <i class="fa fa-envelope"></i>   Connect with Gmail
+        </a>
+      </div>
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name),
       data: {turbo: false}) do |f| %>
       <div class="col-12 mb-3 pt-4">
