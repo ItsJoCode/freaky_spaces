@@ -2,10 +2,17 @@ class PlacesController < ApplicationController
   before_action :set_place, only: %i[show]
 
   def index
+    @bookmarks = Bookmark.where(user_id: current_user)
+    bookmarked_places = Place.left_joins(:bookmarks)
+                            .where(bookmarks: { user_id: current_user })
+                            .order("bookmarks.id DESC")
+    non_bookmarked_places = Place.all.select { |place| place unless bookmarked_places.include?(place) }
+    @places = bookmarked_places + non_bookmarked_places
+
     if params[:query].present?
       @places = Place.global_search(params[:query])
     else
-      @places = Place.all
+      @places
     end
   end
 
