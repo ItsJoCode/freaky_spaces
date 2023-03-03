@@ -16,20 +16,25 @@
 </div>
 
 <div class="container">
-  <div class="cards">
+  <div class="cards" id="my-cards">
 
     <% @places.each do |place| %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path place.photo.key, height: 300, crop: :fill %>')">
+      <div data-controller="bookmark-place" class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path place.photo.key, height: 300, crop: :fill %>')">
         <div class="card-name">
           <h2><%= link_to place.name, place_path(place) %></h2>
         </div>
 
         <div class="card-action">
           <div class="fav">
-            <h2><i class="fa-regular fa-heart"></i></h2>
+            <% bkmk = @bookmarks.where(place_id: place.id).empty? ? "regular" : "solid" %>
+            <%= simple_form_for :bookmark, url: bookmarks_path, method: :post, data: { "bookmark-place-target": "formheart" } do |f| %>
+              <%= f.input :place_id, as: :hidden, input_html: { value: place.id } %>
+              <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id } %>
+            <% end %>
+            <h2><i class="fa-<%= bkmk %> fa-heart" data-action="click->bookmark-place#bookmarked" data-bookmark-place-target="heart"></i></h2>
           </div>
           <div>
-            <p><i class="fa-solid fa-location-dot"></i> Here</p>
+            <p><i class="fa-solid fa-location-dot"></i> <%= place.address.split(",").last %></p>
           </div>
           <div>
             <p><i class="fa-solid fa-people-group"></i> <%= place.capacity %> <i class="fa-solid fa-euro-sign"></i> <%= place.price_per_day %></p>
