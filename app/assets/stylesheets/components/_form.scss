@@ -1,3 +1,78 @@
 .form {
   margin-top: 30px;
 }
+
+
+/* Bouton Facebook Connect */
+.btn-fb {
+  width: 100%;
+  background-color: #3b5998;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.btn-fb i {
+  margin-right: 5px;
+  margin-left: 0;
+}
+
+.btn-fb:hover {
+  background-color: #2d4373;
+  color: white
+}
+
+/* Bouton Gmail Connect */
+.btn-gmail {
+  width: 100%;
+  background-color: #dd4b39;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.btn-gmail i {
+  margin-right: 5px;
+  margin-left: 0;
+}
+
+.btn-gmail:hover {
+  background-color: #c23321;
+  color: white
+}
+
+// /* Bouton Apple Connect */
+// .btn-apple {
+//   width: 100%;
+//   background-color: #000000;
+//   color: white;
+//   font-size: 16px;
+//   padding: 10px 20px;
+//   border-radius: 5px;
+//   text-decoration: none;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   text-align: center;
+// }
+
+// .btn-apple i {
+//   margin-right: 5px;
+//   margin-left: 0;
+// }
+
+// .btn-apple:hover {
+//   background-color: #1a1a1a;
+// }
