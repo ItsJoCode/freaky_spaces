@@ -153,10 +153,23 @@ p {
   color: #212529;
   background-color: #fff;
   border-color: #212529;
+  border-radius: 15px;
 }
 
 .btn-back_to_my_place:hover {
   color: #212529;
   background-color: #e2e6ea;
   border-color: #dae0e5;
+}
+
+.img-detail-flex a {
+  text-decoration: none;
+  color: black;
+}
+
+.links-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }

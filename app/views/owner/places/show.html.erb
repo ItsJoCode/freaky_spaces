@@ -10,9 +10,11 @@
           <div>
             <p class="description"><%= @place.description %></p>
             <p class="capacity-price"><span><i class="fa-solid fa-people-group"></i> Capacity : <%= @place.capacity %></span> <span><i class="fa-solid fa-euro-sign"></i> <%= @place.price_per_day %>/day</span></p>
-            <%= link_to "Supprimer", owner_place_path(@place), data: {turbo_method: :delete, turbo_confirm: "Vraiment??"}, class: 'btn btn-supprimer' %>
-            <%= link_to "Modifier", edit_owner_place_path(@place), data: {turbo_method: :patch}, class: 'btn btn-modifier' %>
-            <%= link_to 'Back to my places', owner_places_path, class: 'btn btn-back_to_my_place' %>
+            <div class="links-container">
+              <%= link_to '<i class="fa-solid fa-pencil"></i>'.html_safe, edit_owner_place_path(@place) %>
+              <%= link_to '<i class="fa-solid fa-trash-can"></i>'.html_safe, owner_place_path(@place), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+              <%= link_to 'Back to my places', owner_places_path, class: 'btn btn-back_to_my_place' %>
+            </div>
           </div>
         </div>
         <hr>
