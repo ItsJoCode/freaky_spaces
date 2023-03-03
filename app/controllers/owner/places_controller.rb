@@ -23,6 +23,7 @@ class Owner::PlacesController < ApplicationController
   end
 
   def edit
+    raise
   end
 
   def update
